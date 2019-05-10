@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <script type="text/javascript" language="JavaScript">
+if (self != top){
+	top.location.href = "/index.adp?MacAddr=A0%3aC5%3a89%3aA5%3a10%3a72&IpAddr=10%2e31%2e61%2e105&Ip6Addr=&vsgpId=&vsgId=1087315&UserAgent=&ProxyHost=&TunnelIfId=6723989&VlanId=31&origDest=http%3a%2f%2fdownload%2eitemis%2ecom%2fantlr%2dgenerator%2d3%2e2%2e0%2dpatch%2ejar";
+}
+  </script>  
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge; text/html; charset=UTF-8"/>
+  <meta name="robots" content="noindex,nofollow,noarchive"/>
+  <title>StayConnected @ DoubleTree</title>
+  <link rel="shortcut icon" href="/graphics/att/favicon.ico"/>
+  <link href="/css/hiltonV2/laptop/sitestyle.css" rel="stylesheet" type="text/css"/>
+
+  <script type="text/javascript" src="/dhtml/aws/dhtml.js"></script>
+  <script type="text/javascript" src="/dhtml/jquery/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="/dhtml/jquery/vtip-min.js"></script>
+  <script type="text/javascript" src="/dhtml/jquery/jquery.infieldlabel.min.js"></script>
+
+   <script type="text/javascript" src="/dhtml/shared/htmlParser.js"></script>
+  <script type="text/javascript" src="/dhtml/shared/postscribe.js"></script>
+  <script type="text/javascript">
+
+var aupAlert = "Please agree to the Terms of Service and Acceptable\nUse Policy by clicking the check box below.";
+var couponAlert="Please input your Coupon code / Promotion code";
+var firstNameAlert="Pleae input your First Name";
+var lastNameAlert="Please input your Last Name";
+var roomNumberAlert="Please input your Room #";
+var hhAccountAlert="Please input your HHonors Account or Username";
+var hhPinAlert="Please input your HHonors Pin # or Password";
+var makeSelectAlert="Please make a selection";
+
+var usernameAlert="Please input your Username";
+var passwordAlert="Please input your Password";
+var DomainAlert="Please select your Domain";
+
+var PurchaseAction = "";
+var FolioAction = "//nmd.hil-nwkbddt.sjc.wayport.net/add-ins/hiltonV2/use_connect.adp";
+var FolioHash = "3057705f143316f1b47c8c0c012bb713";
+var FolioPm = "Folio";
+var HiltonHonorsAction = "https://secure.wayport.net/add-ins/hiltonV2/use_hhonors.adp";
+var HiltonHonorsHash = "3057705f143316f1b47c8c0c012bb713";
+var HiltonHonorsPm = "Folio";
+var AccessCodeAction = "//nmd.hil-nwkbddt.sjc.wayport.net/use_accesscode.adp";
+var AccessCodeHash = "7bf3b39201b93fcc79c518b69bb058d8";
+var AccessCodePm = "Access Code";
+var CouponAction = "https://secure.wayport.net/use_coupon.adp";
+var CouponHash = "8be185597b306b9261ca6d288a7c3ed9";
+var CouponPm = "Coupon";
+var PromotionCodeAction = "//nmd.hil-nwkbddt.sjc.wayport.net/add-ins/hiltonV2/use_promocode.adp";
+var PromotionCodeHash = "3f8662362b4b170bfd2ab96074069460";
+var PromotionCodePm = "Promotion Code";
+var MembershipAction = "https://secure.wayport.net/sbc/sbc_login.adp";
+var MembershipHash = "6df9171cc4035598559b967856047d8e";
+var MembershipPm = "Membership";
+var CreditCardAction = "https://secure.wayport.net/ccform.adp";
+var CreditCardHash = "67235b8b975ae1c7f4578d530ddf7ca5";
+var CreditCardPm = "CreditCard"; 
+
+  </script>
+  <script type="text/javascript" src="/dhtml/hiltonV2/dhtml.js"></script>
+  <!--[if !IE 7]>
+   <style type="text/css">
+    #wrap {display:table;height:100%}
+   </style>
+  <![endif]-->
+
+
+  <script src="/dhtml/mtagconfig.js" type="text/Javascript"></script> 
+
+
+ </head>
+ <body>
+  <div class="infowindow">
+   <div class="infobox">
+   </div>
+  </div>
+  <div class="infomask"></div>
+
+  <div id="index_page" class="page">
+   <div id="index_main" class="main">
+    <div id="index_stage" class="stage">
+
+     <div class="toplinks">
+      <div id="rightside">
+       <a target="_blank" href="http://secure.wayport.net/add-ins/hilton/hifaq.adp?ProxyHost=&UserAgent=Java%2f1%2e8%2e0%5f201&TunnelIfId=6723989&authType=&NmdId=489291&ReturnHost=nmd%2ehil%2dnwkbddt%2esjc%2ewayport%2enet&MacAddr=A0%3aC5%3a89%3aA5%3a10%3a72&IpAddr=10%2e31%2e61%2e105&NduMacAddr=&NduPort=&PortType=Meeting&PortDesc=&UseCount=&PaymentMethod=&ChargeAmount=&Style=HILTONV2&vsgpId=&pVersion=2&ValidationHash=648cdc73d435a3ae72229b4e63f4d041&origDest=http%3a%2f%2fdownload%2eitemis%2ecom%2fantlr%2dgenerator%2d3%2e2%2e0%2dpatch%2ejar&ProxyHost=&vsgId=1087315&Ip6Addr=&VlanId=31&ts=1554654936" class="help_link iframe">Help</a>
+       
+		<select id="locale_select" name="locale">
+        <option value="en" selected>English</option>
+        <option value="es">Spanish</option>
+        <option value="fr">French (Canadian)</option>
+       </select>
+		
+      </div id="rightside">
+     </div class="toplinks">
+     <script>var currentLocale="en";</script>
+
+	 
+
+     <div class="navbar">
+      <div class="location_logo_box">
+       <img src="/graphics/hilton/logo_doubletree.png" alt=""/>
+      </div class="location_logo_box">
+      <div class="navbar_divider"></div>
+      <div class="location_address">
+       <p class="address1">Doubletree Newark/Fremont, CA</p>
+       <p>39900 Balentine Dr, Newark, CA, 94560-5372</p>
+      </div class="location_address">
+      <div class="att_logo"></div>
+     </div class="navbar">
+
+     <div id="index_content" class="content">
+
+      <div id="index_leftcolumn" class="leftcolumn">
+ <a href="https://secure3.hilton.com/en/hh/customer/join/joinHHonors.htm" id="usatLink" target="_blank"><img class="no_tip" src="/graphics/hiltonV2/Full-2017.jpg" width="472" height="424" /></a>
+
+      </div id="index_leftcolumn" class="leftcolumn"> 
+
+      <div id="index_rightcolumn" class="rightcolumn">
+       <img src="/graphics/hiltonV2/stay_connected_titles/StayConnected_Doubletree.jpg" alt="StayConnected"/>
+       <div id="index_main_content" class="main_content">
+
+<form name="HiltonLoginForm" id="HiltonLoginForm" method="GET" action="//nmd.hil-nwkbddt.sjc.wayport.net/index.adp" onsubmit="return validateHiltonLoginForm(this);">
+<input type="hidden" name="NmdId" value="489291"/>
+<input type="hidden" name="ReturnHost" value="nmd.hil-nwkbddt.sjc.wayport.net"/>
+<input type="hidden" name="MacAddr" value="A0:C5:89:A5:10:72"/>
+<input type="hidden" name="IpAddr" value="10.31.61.105"/>
+<input type="hidden" name="NduMacAddr" value=""/>
+<input type="hidden" name="NduPort" value=""/>
+<input type="hidden" name="PortType" value="Meeting"/>
+<input type="hidden" name="PortDesc" value=""/>
+<input type="hidden" name="UseCount" value=""/>
+<input type="hidden" name="PaymentMethod" value="Folio"/>
+<input type="hidden" name="ChargeAmount" value=""/>
+<input type="hidden" name="Style" value="HILTONV2"/>
+<input type="hidden" name="vsgpId" value=""/>
+<input type="hidden" name="pVersion" value="2"/>
+<input type="hidden" name="ValidationHash" value="3057705f143316f1b47c8c0c012bb713"/>
+<input type="hidden" name="origDest" value="http://download.itemis.com/antlr-generator-3.2.0-patch.jar"/>
+<input type="hidden" name="ProxyHost" value=""/>
+<input type="hidden" name="vsgId" value="1087315"/>
+<input type="hidden" name="Ip6Addr" value=""/>
+<input type="hidden" name="VlanId" value="31"/>
+<input type="hidden" name="TunnelIfId" value="6723989"/>
+<input type="hidden" name="ts" value="1554654936"/>
+
+<input name="PO" value="0" type="hidden" />
+<input name="compTier" value="0" type="hidden" />
+<input name="AUPConfirmed" value="1" type="hidden" />
+<h3>Select to connect to the Internet</h3>
+
+
+<div class="options_container">
+ 
+  <div class="hhonors_option">
+  <fieldset class="form_item">
+  <input type="radio" id="hhonors_button" name="option" value="hhonors" class="form_element_spacing"  checked />
+  <span class="form_title"><label for="hhonors_button">
+   Hilton Honors Members:  Free Internet Access
+   <div class="hhonors_desc">When booking direct through Hilton, all Hilton Honors members always get free Standard Internet and Diamond members get free Premium Internet, where available.</div>
+  </label></span>
+ </fieldset>
+ </div>
+ <fieldset class="form_item">
+  <input type="radio" id="purchase_button" name="option" value="purchase" class="form_element_spacing"/>
+  <span id="pms_form_title" class="form_title"><label for="purchase_button">Purchase Premium Internet Access
+   </label></span>
+ </fieldset>
+ <fieldset class="form_item">
+  <input type="radio" id="complimentary_button" name="option" value="complimentary" class="form_element_spacing"  />
+  <span class="form_title"><label for="complimentary_button">
+   Complimentary Standard Internet Access
+   </label></span>
+ </fieldset>
+ <fieldset class="form_item">
+  <input type="radio" id="promo_button" name="option" value="promo" class="form_element_spacing" />
+  <span class="form_title"><label for="promo_button">I have a coupon code / promotion code</label></span>
+ </fieldset>
+		<input type="hidden" name="addDeviceFlag" value="0"/>
+ <fieldset class="form_item">
+  <div id="add_device">
+   If you've already purchased a connection please click <a href="//nmd.hil-nwkbddt.sjc.wayport.net/add-ins/hiltonV2/use_connect.adp?ProxyHost=&UserAgent=Java%2f1%2e8%2e0%5f201&TunnelIfId=6723989&authType=&NmdId=489291&ReturnHost=nmd%2ehil%2dnwkbddt%2esjc%2ewayport%2enet&MacAddr=A0%3aC5%3a89%3aA5%3a10%3a72&IpAddr=10%2e31%2e61%2e105&NduMacAddr=&NduPort=&PortType=Meeting&PortDesc=&UseCount=&PaymentMethod=&ChargeAmount=&Style=HILTONV2&vsgpId=&pVersion=2&ValidationHash=648cdc73d435a3ae72229b4e63f4d041&origDest=http%3a%2f%2fdownload%2eitemis%2ecom%2fantlr%2dgenerator%2d3%2e2%2e0%2dpatch%2ejar&ProxyHost=&vsgId=1087315&Ip6Addr=&VlanId=31&ts=1554654936&addDeviceFlag=1">HERE</a>.
+  </div>
+ </fieldset>
+
+ <div class="submit_buttons">
+  <input width="137" type="image" height="30" border="0" alt="Next" src="/graphics/hiltonV2/button_next.png" value="submit"/>
+ </div class="submit_buttons">
+
+				 
+	<div class="hhonors_ad">
+  Not a Hilton Honors Member?<br/>
+ <a target="_blank" href="http://hhonors1.hilton.com/en_US/hh/join.do" class="hhonors_join">Join now and get free standard internet access <br />during your stay when you book direct. &#x25B6;<br/>&nbsp;</a>
+    <img src="/graphics/hiltonV2/hhonors_logo3.png" alt="hhonors_logo3" class="hhonors_logo"/>
+ </div class="hhonors_ad">
+ 
+	</div class="options_container">
+</form>
+
+       </div id="index_main_content" class="main_content">
+      </div id="index_rightcolumn" class="rightcolumn"> 
+
+
+     </div id="index_content" class="content"> 
+
+    </div id="index_stage" class="stage">
+	<div class="brandbar">
+    
+    </div class="brandbar">
+   </div id="index_main" class="main">
+  </div id="index_page" class="page"> 
+
+  <div id="footer" class="footer">
+
+
+   <div class="footer_txt">
+    <a id="footer_hilton_privacy" target="_blank" href="http://www1.hilton.com/en_US/hi/customersupport/privacy-policy.do">Hilton Privacy Policy</a>  |  <a id="footer_tosaup" target="_blank" href="http://secure.wayport.net/add-ins/hilton/hitosaup.adp?ProxyHost=&UserAgent=Java%2f1%2e8%2e0%5f201&TunnelIfId=6723989&authType=&NmdId=489291&ReturnHost=nmd%2ehil%2dnwkbddt%2esjc%2ewayport%2enet&MacAddr=A0%3aC5%3a89%3aA5%3a10%3a72&IpAddr=10%2e31%2e61%2e105&NduMacAddr=&NduPort=&PortType=Meeting&PortDesc=&UseCount=&PaymentMethod=Folio&ChargeAmount=&Style=HILTONV2&vsgpId=&pVersion=2&ValidationHash=3057705f143316f1b47c8c0c012bb713&origDest=http%3a%2f%2fdownload%2eitemis%2ecom%2fantlr%2dgenerator%2d3%2e2%2e0%2dpatch%2ejar&ProxyHost=&vsgId=1087315&Ip6Addr=&VlanId=31&ts=1554654936">Terms of Service and Acceptable Use Policy</a>  |  <a target="_blank" href="http://www.att.com/gen/privacy-policy?pid=2506">AT&amp;T Privacy Policy</a>  |  &copy;2019 Hilton Hotels Corporation  |  &copy;2019 AT&amp;T Intellectual Property. All Rights Reserved.
+   <br>IP Address: 10.31.61.105 | Mac Address A0:C5:89:A5:10:72
+   </div class="footer_txt"> 
+
+  </div id="footer" class="footer"> 
+
+
+ </body>
+</html> 
+

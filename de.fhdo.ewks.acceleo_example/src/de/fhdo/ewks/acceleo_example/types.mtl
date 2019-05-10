@@ -1,0 +1,16 @@
+[comment encoding = UTF-8 /]
+[module types('http://www.fh-dortmund.de/ewks2019/datastructure')/]
+
+[template public generateType(type : Type) post(trim())]
+[if (type = Type::BOOLEAN)]
+Boolean
+[elseif (type = Type::DOUBLE)]
+Double
+[elseif (type = Type::FLOAT)]
+Float
+[elseif (type = Type::INTEGER)]
+Integer
+[elseif (type = Type::STRING)]
+String
+[/if]
+[/template]

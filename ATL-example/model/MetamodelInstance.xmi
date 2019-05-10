@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ewks2019_datastructure:Context
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ewks2019_datastructure="http://www.fh-dortmund.de/ewks2019/datastructure"
+    xsi:schemaLocation="http://www.fh-dortmund.de/ewks2019/datastructure ml_example.ecore"
+    name="Accounting">
+  <structures
+      name="ParkingSpace">
+    <attributes
+        name="name"
+        type="STRING"/>
+    <attributes
+        name="description"
+        type="STRING"/>
+    <attributes
+        name="isOpen"/>
+    <attributes
+        name="longitude"
+        type="DOUBLE"/>
+    <attributes
+        name="latitude"
+        type="DOUBLE"/>
+  </structures>
+</ewks2019_datastructure:Context>

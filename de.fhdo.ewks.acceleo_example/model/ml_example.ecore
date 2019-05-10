@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ml_example" nsURI="http://www.fh-dortmund.de/ewks2019/datastructure"
+    nsPrefix="ewks2019_datastructure">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="basePackage" value="de.fhdo.ewks"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EEnum" name="Type">
+    <eLiterals name="BOOLEAN"/>
+    <eLiterals name="DOUBLE"/>
+    <eLiterals name="FLOAT"/>
+    <eLiterals name="INTEGER"/>
+    <eLiterals name="STRING"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" unique="false" eType="#//Type"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="structure" eType="#//Structure"
+        eOpposite="#//Structure/attributes"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Structure">
+    <eOperations name="checkName" unique="false" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="return ((!this.getName().isEmpty()) &amp;&amp; &lt;%java.lang.Character%>.isUpperCase(this.getName().charAt(0)));"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" lowerBound="1"
+        upperBound="-1" eType="#//Attribute" containment="true" resolveProxies="false"
+        eOpposite="#//Attribute/structure"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="#//Context"
+        eOpposite="#//Context/structures"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Context">
+    <eOperations name="checkUniqueStructures" unique="false" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="int _size = this.getStructures().size();&#xA;&lt;%org.eclipse.xtext.xbase.lib.ExclusiveRange%> _doubleDotLessThan = new &lt;%org.eclipse.xtext.xbase.lib.ExclusiveRange%>(0, _size, true);&#xA;for (final &lt;%java.lang.Integer%> i : _doubleDotLessThan)&#xA;{&#xA;&#x9;int _size_1 = this.getStructures().size();&#xA;&#x9;&lt;%org.eclipse.xtext.xbase.lib.ExclusiveRange%> _doubleDotLessThan_1 = new &lt;%org.eclipse.xtext.xbase.lib.ExclusiveRange%>(((i).intValue() + 1), _size_1, true);&#xA;&#x9;for (final &lt;%java.lang.Integer%> n : _doubleDotLessThan_1)&#xA;&#x9;{&#xA;&#x9;&#x9;&lt;%java.lang.String%> _name = this.getStructures().get((i).intValue()).getName();&#xA;&#x9;&#x9;&lt;%java.lang.String%> _name_1 = this.getStructures().get((n).intValue()).getName();&#xA;&#x9;&#x9;boolean _equals = &lt;%com.google.common.base.Objects%>.equal(_name, _name_1);&#xA;&#x9;&#x9;if (_equals)&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;return (n).intValue();&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;return (-1);"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="structures" lowerBound="1"
+        upperBound="-1" eType="#//Structure" containment="true" resolveProxies="false"
+        eOpposite="#//Structure/context"/>
+  </eClassifiers>
+</ecore:EPackage>

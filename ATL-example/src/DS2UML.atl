@@ -1,0 +1,71 @@
+-- @path DataStructureModel=/model/ml_example.ecore
+
+module DS2UML;
+create OUT : UML from IN : DataStructureModel, TYPES : UML;
+
+helper def : getCreatedPackage(name : String) : UML!Package =
+	UML!Package.allInstancesFrom('OUT')
+		->any(p | p.name = name)
+;
+
+helper def : getCreatedClass(packageName : String, className : String) : UML!Package =
+	thisModule.getCreatedPackage(packageName)
+		.packagedElement
+		->any(e | e.oclIsTypeOf(UML!Class) and e.name = className)
+;
+
+helper def : umlType(dataStructureType : DataStructureModel!Type) : UML!PrimitiveType =
+	if dataStructureType = #BOOLEAN
+	then
+		UML!PrimitiveType.allInstancesFrom('TYPES')->any(p | p.name = 'Boolean')
+	else if dataStructureType = #DOUBLE or  dataStructureType = #FLOAT
+	then
+		UML!PrimitiveType.allInstancesFrom('TYPES')->any(p | p.name = 'Real')
+	else if dataStructureType = #INTEGER
+	then
+		UML!PrimitiveType.allInstancesFrom('TYPES')->any(p | p.name = 'Integer')
+	else if dataStructureType = #STRING
+	then
+		UML!PrimitiveType.allInstancesFrom('TYPES')->any(p | p.name = 'String')
+	else
+		OclUndefined
+	endif
+	endif
+	endif
+	endif
+;
+
+rule Package {
+	from
+		s : DataStructureModel!Context
+	to
+		t : UML!Package(
+			name <- s.name
+		)
+}
+
+rule Class {
+	from
+		s : DataStructureModel!Structure
+	do {
+		thisModule.getCreatedPackage(s.context.name)
+			->createOwnedClass(s.name, false);
+	}
+}
+
+rule Property {
+	from
+		s : DataStructureModel!Attribute
+	to
+		t : UML!Property(
+			name <- s.name,
+			type <- thisModule.umlType(s.type)
+		)
+	do {
+		thisModule.getCreatedClass(s.structure.context.name, s.structure.name)
+			.ownedAttribute <- thisModule.getCreatedClass(
+					s.structure.context.name,
+					s.structure.name
+				).ownedAttribute->including(t);
+	}
+}

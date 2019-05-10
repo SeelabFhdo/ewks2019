@@ -1,0 +1,40 @@
+@Ecore(nsURI="http://www.fh-dortmund.de/ewks2019/datastructure", nsPrefix="ewks2019_datastructure")
+package de.fhdo.ewks.ml_example
+
+enum Type {
+	BOOLEAN,
+	DOUBLE,
+	FLOAT,
+	INTEGER,
+	STRING
+}
+
+class Attribute {
+	String name
+	Type ^type
+	container Structure structure opposite attributes
+}
+
+class Structure {
+	String name
+	contains Attribute[1..*] attributes opposite structure
+	container Context context opposite structures
+
+	op boolean checkName() {
+		return !name.isEmpty && Character.isUpperCase(name.charAt(0))
+	}
+}
+
+class Context {
+	String name
+	contains Structure[1..*] structures opposite context
+
+	op int checkUniqueStructures() {
+		for (i : 0..<structures.size)
+			for (n : i+1..<structures.size)
+				if (structures.get(i).name == structures.get(n).name)
+					return n
+
+		return -1
+	}
+}

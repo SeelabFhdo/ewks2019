@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<uml:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" name="Accounting">
+  <packagedElement xsi:type="uml:Class" name="ParkingSpace">
+    <ownedAttribute name="name">
+      <type xsi:type="uml:PrimitiveType" href="../model/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute name="description">
+      <type xsi:type="uml:PrimitiveType" href="../model/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute name="isOpen">
+      <type xsi:type="uml:PrimitiveType" href="../model/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute name="longitude">
+      <type xsi:type="uml:PrimitiveType" href="../model/UMLPrimitiveTypes.library.uml#Real"/>
+    </ownedAttribute>
+    <ownedAttribute name="latitude">
+      <type xsi:type="uml:PrimitiveType" href="../model/UMLPrimitiveTypes.library.uml#Real"/>
+    </ownedAttribute>
+  </packagedElement>
+</uml:Package>

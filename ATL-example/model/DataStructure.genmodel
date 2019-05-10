@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.fhdo.ewks.acceleo_example/src" modelPluginID="de.fhdo.ewks.acceleo_example"
+    runtimeJar="true" modelName="DataStructure" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    testsDirectory="" booleanFlagsField="eFlags" booleanFlagsReservedBits="8" importerID="org.eclipse.emf.ecore.xcore.importer"
+    containmentProxies="true" complianceLevel="8.0" language="en" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    operationReflection="true" importOrganizing="true" decoration="Live" oSGiCompatible="true"
+    eclipsePlatformVersion="Juno" autoResizeProperties="true" autoExpandProperties="10"
+    findAction="true" expandAllAction="true" collapseAllAction="true" revertAction="true">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter">
+    <genAnnotations source="selectedPackages">
+      <details key="http://www.eclipse.org/emf/2002/Ecore" value="Ecore.xsd"/>
+    </genAnnotations>
+    <details key="directoryURI" value="."/>
+  </genAnnotations>
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter.xmi">
+    <genAnnotations source="selectedPackages">
+      <details key="http://www.eclipse.org/emf/2002/Ecore" value="EcoreXMI.xsd"/>
+    </genAnnotations>
+    <details key="directoryURI" value="."/>
+  </genAnnotations>
+  <foreignModel>../../Xcore-example/model/DataStructure.xcore</foreignModel>
+  <modelPluginVariables>org.eclipse.xtext.xbase.lib</modelPluginVariables>
+  <modelPluginVariables>org.eclipse.emf.ecore.xcore.lib</modelPluginVariables>
+  <genPackages prefix="Ml_example" basePackage="de.fhdo.ewks" disposableProviderFactory="true"
+      ecorePackage="ml_example.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ml_example.ecore#//Type">
+      <genEnumLiterals ecoreEnumLiteral="ml_example.ecore#//Type/BOOLEAN"/>
+      <genEnumLiterals ecoreEnumLiteral="ml_example.ecore#//Type/DOUBLE"/>
+      <genEnumLiterals ecoreEnumLiteral="ml_example.ecore#//Type/FLOAT"/>
+      <genEnumLiterals ecoreEnumLiteral="ml_example.ecore#//Type/INTEGER"/>
+      <genEnumLiterals ecoreEnumLiteral="ml_example.ecore#//Type/STRING"/>
+    </genEnums>
+    <genClasses ecoreClass="ml_example.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ml_example.ecore#//Attribute/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ml_example.ecore#//Attribute/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ml_example.ecore#//Attribute/structure"/>
+    </genClasses>
+    <genClasses ecoreClass="ml_example.ecore#//Structure">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ml_example.ecore#//Structure/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ml_example.ecore#//Structure/attributes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ml_example.ecore#//Structure/context"/>
+      <genOperations ecoreOperation="ml_example.ecore#//Structure/checkName" body="return ((!this.getName().isEmpty()) &amp;&amp; &lt;%java.lang.Character%>.isUpperCase(this.getName().charAt(0)));"/>
+    </genClasses>
+    <genClasses ecoreClass="ml_example.ecore#//Context">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ml_example.ecore#//Context/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ml_example.ecore#//Context/structures"/>
+      <genOperations ecoreOperation="ml_example.ecore#//Context/checkUniqueStructures"
+          body="int _size = this.getStructures().size();&#xA;&lt;%org.eclipse.xtext.xbase.lib.ExclusiveRange%> _doubleDotLessThan = new &lt;%org.eclipse.xtext.xbase.lib.ExclusiveRange%>(0, _size, true);&#xA;for (final &lt;%java.lang.Integer%> i : _doubleDotLessThan)&#xA;{&#xA;&#x9;int _size_1 = this.getStructures().size();&#xA;&#x9;&lt;%org.eclipse.xtext.xbase.lib.ExclusiveRange%> _doubleDotLessThan_1 = new &lt;%org.eclipse.xtext.xbase.lib.ExclusiveRange%>(((i).intValue() + 1), _size_1, true);&#xA;&#x9;for (final &lt;%java.lang.Integer%> n : _doubleDotLessThan_1)&#xA;&#x9;{&#xA;&#x9;&#x9;&lt;%java.lang.String%> _name = this.getStructures().get((i).intValue()).getName();&#xA;&#x9;&#x9;&lt;%java.lang.String%> _name_1 = this.getStructures().get((n).intValue()).getName();&#xA;&#x9;&#x9;boolean _equals = &lt;%com.google.common.base.Objects%>.equal(_name, _name_1);&#xA;&#x9;&#x9;if (_equals)&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;return (n).intValue();&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;return (-1);"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

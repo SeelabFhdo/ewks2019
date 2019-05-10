@@ -1,0 +1,57 @@
+[comment encoding = UTF-8 /]
+[module main('http://www.fh-dortmund.de/ewks2019/datastructure')/]
+[import de::fhdo::ewks::acceleo_example::types/]
+
+[template public main(structure : Structure) {
+	contextName : String = structure._context.name.toLowerFirst();
+	packageName : String = 'de.fhdo.ewks.' + contextName;
+	packageFolder : String = packageName.replaceAll('\\.', '/');
+	className : String = structure.name.toUpperFirst();
+}]
+[comment @main/]
+[file (packageFolder + '/' + structure.name + '.java', false, 'UTF-8')]
+package [packageName/];
+
+class [className/] {
+	[for (attribute : Attribute | structure.attributes) separator('')]
+	private [attribute.type.generateType()/] [attribute.name.toLowerFirst()/];
+	[/for]	
+
+	public [className/]() {
+		// NOOP
+	}
+
+	public [className/]([for (attribute : Attribute | structure.attributes) separator(', ')][attribute.type.generateType()/] [attribute.name.toLowerFirst()/][/for]) {
+		[for (attribute : Attribute | structure.attributes)]
+		set[attribute.name.toUpperFirst()/]([attribute.name.toLowerFirst()/]);
+		[/for]
+	}
+	[for (attribute : Attribute | structure.attributes)]
+
+	public void set[attribute.name.toUpperFirst()/]([attribute.type.generateType()/] [attribute.name.toLowerFirst()/]) {
+		this.[attribute.name.toLowerFirst()/] = [attribute.name.toLowerFirst()/];
+	}
+
+	public [attribute.type.generateType()/] get[attribute.name.toUpperFirst()/]() {
+		return [attribute.name.toLowerFirst()/];
+	}
+	[/for]
+
+	@Override
+	public String toString() {
+		StringBuffer sb = new StringBuffer();
+		sb.append("[className/] (");
+		[for (attribute : Attribute | structure.attributes->subOrderedSet(1, structure.attributes->size() -1))]
+		[let attributeName : String = attribute.name.toLowerFirst()]
+		sb.append("[attributeName/] = " + [attributeName/] + ", ");
+		[/let]
+		[/for]
+		[let lastAttributeName : String = structure.attributes->last().name.toLowerFirst()]
+		sb.append("[lastAttributeName/] = " + [lastAttributeName/]);
+		[/let]
+		sb.append(")");
+		return sb.toString();
+	}
+}
+[/file]
+[/template]
