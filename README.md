@@ -100,6 +100,10 @@ To try out the ATL example, you have to do the following:
 </li>
 
 <li>
+Switch to the "Advanced" tab and activate the checkbox <code>Allow inter-model references</code>.
+</li>
+
+<li>
 Hit <code>Run</code>. The transformation will produce a file called <code>out.xmi</code> in the project folder <code>output</code>. It corresponds to the model you created in step (d) of the previous section, but is a UML class diagram instance.
 </li>
 </ol>
