@@ -9,9 +9,9 @@ This repository contains usage examples of tools from the Eclipse Modeling Frame
 To play around with the provided examples, follow these steps:
 
 1. Download one of the predefined Eclipse packages depending on your OS:
-   * Linux: [TODO](TODO)
-   * OS X: [TODO](TODO)
-   * Windows: [TODO](TODO)
+   * Linux: [Link](https://github.com/SeelabFhdo/ewks2019/releases/download/v1.0/LEMMA_Linux.zip)
+   * OS X: [Link](https://github.com/SeelabFhdo/ewks2019/releases/download/v1.0/LEMMA_OSX.zip)
+   * Windows: [Link](https://github.com/SeelabFhdo/ewks2019/releases/download/v1.0/LEMMA_Windows.zip)
 
 2. Clone/Download this repository to your harddrive. 
 3. Run the ``eclipse`` executable in the package you downloaded in step 1, create a workspace as requested by the IDE, and import the projects you cloned/downloaded in step 2. Projects can be imported in Eclipse by hitting ``File > Open Projects from File System...``, then choosing the parent folder of the cloned/downloaded projects as ``Import source``, and after the projects were loaded hitting ``Finish``.
