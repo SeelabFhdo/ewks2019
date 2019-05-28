@@ -1,10 +1,11 @@
 # Eclipse Modeling Framework Examples
 
-This repository contains usage examples of tools from the Eclipse Modeling Framework (EMF) [1]. The usage examples show the implementation of
+This repository contains usage examples of tools from or based on the Eclipse Modeling Framework (EMF) [1]. The usage examples show
 
-- the abstract and concrete syntax of a textual language for modeling simple data structures (*used tools:* Xcore and Xtext [2,3]).
-- a model-to-text transformation that derives Java POJOs from models constructed with the aforementioned Data Structure Modeling Language (*used tool:* Acceleo [4]).
-- a model-to-model transformation that derives UML class diagrams from data structure models (*used tool:* ATL [5]).
+- the implementation of an abstract and concrete syntax for a textual language for modeling simple data structures (*used tools:* Xcore and Xtext [2,3]).
+- implementation of a model-to-text transformation that derives Java POJOs from models constructed with the aforementioned Data Structure Modeling Language (*used tool:* Acceleo [4]).
+- implementation of a model-to-model transformation that derives UML class diagrams from data structure models (*used tool:* ATL [5]).
+- models that represent different views on a microservice architecture and which are expressed with the Language Ecosystem for Modeling Microservice Architectures (LEMMA) [8].
 
 To play around with the provided examples, follow these steps:
 
@@ -108,6 +109,24 @@ Hit <code>Run</code>. The transformation will produce a file called <code>out.xm
 </li>
 </ol>
 
+## Running the LEMMA Examples
+
+To try out the LEMMA examples, you have to do the following:
+<ol type="a">
+<li>
+  Open the project <code>LEMMA-examples</code> which you imported into your workspace in step 3 above.
+</li>
+
+<li>
+  Within the project you will find different different folders. 
+  <ul>
+    <li>The <code>domain models</code> folder comprises the domain models <code>Banking.data</code> and <code>Student.data</code> expressed in LEMMA's Domain Data Modeling Language.</li>
+    <li>The <code>microservices</code> folder comprises the service models <code>Banking.services</code> and <code>Student.services</code> expressed in LEMMA's Service Modeling Language.</li>
+    <li>The <code>operation</code> folder comprises the operation model <code>Architecture.operation</code> expressed in LEMMA's Operation Modeling Language.</li>
+    <li>The <code>technology</code> folder comprises the Java technology model (file <code>java.technology</code>) used throughout the lectures. You are invited to explore and play around with it, in case you are curious.</li>
+    </ul>
+  You can double click on each of the mentioned files to open the editor that shows the contained model according to the syntax of the respective modeling language and play around with the models leveraging the editor.
+
 ## References
 [1] [https://wiki.eclipse.org/EMF](https://wiki.eclipse.org/EMF)  
 [2] [https://wiki.eclipse.org/Xcore](https://wiki.eclipse.org/Xcore)  
@@ -115,4 +134,5 @@ Hit <code>Run</code>. The transformation will produce a file called <code>out.xm
 [4] [https://wiki.eclipse.org/Acceleo](https://wiki.eclipse.org/Acceleo)  
 [5] [https://www.eclipse.org/atl](https://www.eclipse.org/atl)  
 [6] [https://www.ntnu.no/wiki/display/tdt4250/Editing+Ecore+model+instances](https://www.ntnu.no/wiki/display/tdt4250/Editing+Ecore+model+instances)  
-[7] [https://www.omg.org/spec/UML/2.5/PDF](https://www.omg.org/spec/UML/2.5/PDF)
+[7] [https://www.omg.org/spec/UML/2.5/PDF](https://www.omg.org/spec/UML/2.5/PDF)  
+[8] [https://github.com/SeelabFhdo/ddmm](https://github.com/SeelabFhdo/ddmm)

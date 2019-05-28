@@ -1,0 +1,24 @@
+/** 
+ * Domain model for the Banking context
+ */
+version v1 {
+	context Banking {
+		// Data structure representing a bank that can manage several accounts
+		structure Bank {
+			string name,
+			string address,
+			string bic,
+			Accounts managedAccounts
+		}
+		
+		// Data structure representing an account
+		structure Account {
+			Bank bank,
+			long accountId,
+			double currentBalance
+		}
+		
+		// List type to hold a sequence of Account instances
+		list Accounts {Account account}
+	}
+}

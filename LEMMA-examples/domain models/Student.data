@@ -1,0 +1,40 @@
+import datatypes from "Banking.data" as banking
+
+/** 
+ * Person context
+ */
+context Person {
+	// Data structure representing a person that has several banking accounts
+	structure Person {
+		string firstname,
+		string lastname,
+		string gender,
+		date birthday,
+		banking::v1.Banking.Accounts accounts
+	}
+}
+
+/**
+ * Student context
+ */
+context Student {
+	// Data structure representing a student, who is a person, and may attend several courses at
+	// university
+	structure Student extends Person.Person {
+		int studentNumber,
+		int numberOfTerms,
+		Courses courses,
+		hide boolean paidTuitionFeeForCurrentTerm
+	}
+	
+	// Data structure representing a university's courses
+	structure Course {
+		int number,
+		string name,
+		boolean offeredInWinterTerm,
+		boolean offeredInSummerTerm
+	}
+	
+	// List type to hold a sequence of Course instances
+	list Courses {Course course}
+}

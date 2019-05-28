@@ -1,0 +1,45 @@
+import microservices from "../microservices/Banking.services" as bankingServices
+import microservices from "../microservices/Student.services" as studentServices
+import technology from "../technology/java.technology" as java
+
+/**
+ * Container for the BankingService
+ */
+@technology(java)
+container BankingContainer deployment technology java::_deployment.docker
+	with operation environment "openjdk"
+	deploys bankingServices::org.example.BankingService {
+	default values {
+		basic endpoints {
+			java::_protocols.rest/json: "http://example.org:8080";
+		}
+	}
+}
+
+/**
+ * Container for the StudentService
+ */
+@technology(java)
+container StudentContainer deployment technology java::_deployment.docker	
+	deploys studentServices::org.example.StudentService {
+	// Conversely to the BankingContainer, the basic endpoint is defined exclusively for the 
+	// deployed service
+	studentServices::org.example.StudentService {
+		basic endpoints {
+			java::_protocols.rest/json: "http://example.org:8081";
+		}
+	}	
+}
+
+/**
+ * Infrastructure node representing a service discovery
+ */
+@technology(java)
+discovery is java::_infrastructure.serviceDiscovery
+	with operation environment "eureka"
+	used by bankingServices::org.example.BankingService,
+			studentServices::org.example.StudentService {
+	endpoints {
+		java::_protocols.rest/json: "http://example.org:8082/discovery";
+	}
+}

@@ -1,0 +1,98 @@
+import datatypes from "../domain models/Banking.data" as banking
+import datatypes from "../domain models/Student.data" as student
+import microservices from "Banking.services" as bankingServices
+import technology from "../technology/java.technology" as java
+
+/**
+ * A microservice for handling student-related concerns
+ */
+@technology(java)
+@sync(java::_protocols.rest)
+@endpoints(java::_protocols.rest: "/students";)
+public functional microservice org.example.StudentService {
+	// This service requires the BankingService
+	required microservices {
+		bankingServices::org.example.BankingService
+	}
+	
+	// Interface for Course-related concerns
+	@endpoints(java::_protocols.rest: "/courses";)
+	interface Course {
+		// Operation to create a course
+		createCourse(
+			sync number : int,
+			sync name : string,
+			sync offeredInWinterTerm? : boolean,
+			sync offeredInSummerTerm? : boolean
+		);
+		
+		// Operation to retrieve a course
+		@endpoints(java::_protocols.rest: "/{courseNumber}";)
+		getCourse(
+			sync courseNumber : int,
+			sync out course : student::Student.Course
+		);
+	}
+	
+	// Interface for Student-related concerns
+	interface Student {
+		// Operation to create a student
+		createStudent(
+			sync firstname : string,
+			sync lastname : string,
+			sync gender : string,
+			sync birthday : date,
+			sync studentNumber : int,
+			sync numberOfTerms : int,
+			sync paidTuitionFeeForCurrentTerm? : boolean
+		);
+		
+		// Operation to assign a course to a student
+		addCourse(
+			sync in course : student::Student.Course,
+			sync in student : student::Student.Student
+		);
+		
+		// Operation to retrieve a student
+		@endpoints(java::_protocols.rest: "/{studentNumber}";)
+		getStudent(
+			sync in studentNumber : int,
+			sync out student : student::Student.Student
+		);
+	}
+	
+	// Consolidating interface for get-operations
+	interface Read {
+		@endpoints(java::_protocols.rest: "/read/course/{courseNumber}";)
+		refers Course.getCourse;
+		
+		@endpoints(java::_protocols.rest: "/read/student/{studentNumber}";)
+		refers Student.getStudent;
+	}
+	
+	// Internal interface for Person-related concerns
+	internal interface Person {
+		// Operation to create a person
+		createPerson(
+			sync firstname : string,
+			sync lastname : string,
+			sync gender : string,
+			sync birthday : date
+		);
+		
+		// Operation to assign an account to a person
+		addAccount(
+			sync person : student::Person.Person,
+			sync newAccount : banking::v1.Banking.Account,
+			sync out fault errorCode : int
+		);
+		
+		// Operation to retrieve a person
+		getPerson(
+			sync firstname : string,
+			sync lastname : string,
+			sync gender : string,
+			sync birthday : date
+		);
+	}	
+}

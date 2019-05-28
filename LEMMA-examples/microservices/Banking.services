@@ -1,0 +1,74 @@
+import datatypes from "../domain models/Banking.data" as banking
+import technology from "../technology/java.technology" as java
+
+/**
+ * An architecture-internal microservice for handling banking-related concerns
+ */
+@technology(java)
+@sync(java::_protocols.rest)
+@async(java::_protocols.amqp)
+@endpoints(
+	java::_protocols.rest: "/banking", "/bnk"; 
+	java::_protocols.amqp: "/amqp/banking";
+)
+architecture functional microservice org.example.BankingService {
+	// Interface for Bank-related concerns
+	@endpoints(java::_protocols.rest: "/banks";)
+	interface Bank {
+		// Operation to create a bank
+		createBank(
+			sync in name : string,
+			sync in address : string,
+			sync in bic : string
+		);
+		
+		// Operation to get a bank via its name or BIC
+		@endpoints(java::_protocols.rest: "/{bankName}", "/{bic}";)
+		getBank(
+			sync in bankName? : string,
+			sync in bic? : string,
+			sync out fault bank : banking::v1.Banking.Bank
+		);
+		
+		// Operation to assign an account to a bank
+		addManagedAccount(
+			sync in bankName : string,
+			sync in managedAccount : banking::v1.Banking.Account,
+			sync out fault errorCode : int
+		);
+	}
+	
+	// Interface for Account-related concerns
+	@endpoints(java::_protocols.rest: "/accounts";)
+	interface Account {
+		// Operation to create an account
+		createAccount(
+			sync in bank : banking::v1.Banking.Bank,
+			sync in initialBalance : double,
+			sync out createdAccount : banking::v1.Banking.Account,
+			sync out fault errorCode : int
+		);
+		
+		// Operation to get an account via its ID
+		@endpoints(java::_protocols.rest: "/{accountId}";)
+		getAccount(
+			sync in accountId : long,
+			sync out account : banking::v1.Banking.Account
+		);
+		
+		// Operation to retrieve all accounts of a bank
+		@endpoints(java::_protocols.rest: "/{bankName}", "/{bic}";)
+		getAllAccounts(
+			sync in bankName? : string,
+			sync in bic? : string,
+			sync out accounts : banking::v1.Banking.Accounts
+		);
+		
+		// Operation to transfer some money to a bank account
+		transferMoney(
+			sync in accountId : long,
+			sync in amount : double,
+			sync out errorCode : int
+		);
+	}
+}
