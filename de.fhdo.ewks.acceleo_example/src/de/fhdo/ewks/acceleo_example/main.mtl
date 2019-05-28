@@ -9,7 +9,7 @@
 	className : String = structure.name.toUpperFirst();
 }]
 [comment @main/]
-[file (packageFolder + '/' + structure.name + '.java', false, 'UTF-8')]
+[file (packageFolder + '/' + structure.name.toUpperFirst() + '.java', false, 'UTF-8')]
 package [packageName/];
 
 class [className/] {
