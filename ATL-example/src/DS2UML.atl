@@ -8,7 +8,7 @@ helper def : getCreatedPackage(name : String) : UML!Package =
 		->any(p | p.name = name)
 ;
 
-helper def : getCreatedClass(packageName : String, className : String) : UML!Package =
+helper def : getCreatedClass(packageName : String, className : String) : UML!Class =
 	thisModule.getCreatedPackage(packageName)
 		.packagedElement
 		->any(e | e.oclIsTypeOf(UML!Class) and e.name = className)
