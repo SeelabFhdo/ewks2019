@@ -68,7 +68,7 @@ architecture functional microservice org.example.BankingService {
 		transferMoney(
 			sync in accountId : long,
 			sync in amount : double,
-			sync out errorCode : int
+			sync out fault errorCode : int
 		);
 	}
 }
