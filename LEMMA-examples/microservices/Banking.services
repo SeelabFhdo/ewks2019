@@ -27,7 +27,7 @@ architecture functional microservice org.example.BankingService {
 		getBank(
 			sync in bankName? : string,
 			sync in bic? : string,
-			sync out fault bank : banking::v1.Banking.Bank
+			sync out bank : banking::v1.Banking.Bank
 		);
 		
 		// Operation to assign an account to a bank
