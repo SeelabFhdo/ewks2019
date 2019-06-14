@@ -153,7 +153,7 @@ The file contains three different diagrams (class, component, and deployment). Y
 [5] [https://www.eclipse.org/atl](https://www.eclipse.org/atl)  
 [6] [https://www.ntnu.no/wiki/display/tdt4250/Editing+Ecore+model+instances](https://www.ntnu.no/wiki/display/tdt4250/Editing+Ecore+model+instances)  
 [7] [https://www.omg.org/spec/UML/2.5/PDF](https://www.omg.org/spec/UML/2.5/PDF)  
-[8] [https://github.com/SeelabFhdo/ddmm](https://github.com/SeelabFhdo/ddmm)
+[8] [https://github.com/SeelabFhdo/ddmm](https://github.com/SeelabFhdo/ddmm)  
 [9] Rademacher, F., Sorgalla, J., Sachweh, S.: Challenges of domain-driven microservice design:
 A model-driven perspective. IEEE Software 35(3), 36–43 (2018)
 
