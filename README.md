@@ -1,11 +1,12 @@
-# Eclipse Modeling Framework Examples
+# Eclipse Modeling Framework and UML Examples
 
-This repository contains usage examples of tools from or based on the Eclipse Modeling Framework (EMF) [1]. The usage examples show
+This repository contains usage examples of tools from or based on the Eclipse Modeling Framework (EMF) [1], and UML examples. The usage examples show
 
 - the implementation of an abstract and concrete syntax for a textual language for modeling simple data structures (*used tools:* Xcore and Xtext [2,3]).
 - implementation of a model-to-text transformation that derives Java POJOs from models constructed with the aforementioned Data Structure Modeling Language (*used tool:* Acceleo [4]).
 - implementation of a model-to-model transformation that derives UML class diagrams from data structure models (*used tool:* ATL [5]).
 - models that represent different views on a microservice architecture and which are expressed with the Language Ecosystem for Modeling Microservice Architectures (LEMMA) [8].
+- UML diagrams for different viewpoints in Microservice Architecture (MSA) [9].
 
 To play around with the provided examples, follow these steps:
 
@@ -16,6 +17,7 @@ To play around with the provided examples, follow these steps:
 
 2. Clone/Download this repository to your harddrive. 
 3. Run the ``eclipse`` executable in the package you downloaded in step 1, create a workspace as requested by the IDE, and import the projects you cloned/downloaded in step 2. Projects can be imported in Eclipse by hitting ``File > Open Projects from File System...``, then choosing the parent folder of the cloned/downloaded projects as ``Import source``, and after the projects were loaded hitting ``Finish``.
+4. Download [Visual Paradigm 15.2 Community Edition](https://www.visual-paradigm.com/download/community.jsp) for your OS and install it.
 
 Now that you have imported all projects into your workspace, you can try out the usage examples. The execution of the examples is technology-specific.
 
@@ -124,8 +126,24 @@ To try out the LEMMA examples, you have to do the following:
     <li>The <code>microservices</code> folder comprises the service models <code>Banking.services</code> and <code>Student.services</code> expressed in LEMMA's Service Modeling Language.</li>
     <li>The <code>operation</code> folder comprises the operation model <code>Architecture.operation</code> expressed in LEMMA's Operation Modeling Language.</li>
     <li>The <code>technology</code> folder comprises the Java technology model (file <code>java.technology</code>) used throughout the lectures. You are invited to explore and play around with it, in case you are curious.</li>
-    </ul>
+    </ol>
   You can double click on each of the mentioned files to open the editor that shows the contained model according to the syntax of the respective modeling language and play around with the models leveraging the editor.
+
+## Running the UML examples
+
+To try out the UML examples, you have to do the following:
+<ol type="a">
+<li>
+  Start Visual Paradigm which you installed in step 4 (see above).
+</li>
+
+<li>
+In the dash panel, click on <code>Project > Open</code>. Select the <code>UML-examples.vpp</code> that you cloned from the repository in step 2 (see above) from the file chooser and open it.
+</li>
+    </ol>
+    
+The file contains three different diagrams (class, component, and deployment). You can switch between them in Visual Paradigm via the <a href="https://www.visual-paradigm.com/support/documents/vpuserguide/12/512/85164_projectbrows.html">Project Browser</a>.
+
 
 ## References
 [1] [https://wiki.eclipse.org/EMF](https://wiki.eclipse.org/EMF)  
@@ -136,3 +154,6 @@ To try out the LEMMA examples, you have to do the following:
 [6] [https://www.ntnu.no/wiki/display/tdt4250/Editing+Ecore+model+instances](https://www.ntnu.no/wiki/display/tdt4250/Editing+Ecore+model+instances)  
 [7] [https://www.omg.org/spec/UML/2.5/PDF](https://www.omg.org/spec/UML/2.5/PDF)  
 [8] [https://github.com/SeelabFhdo/ddmm](https://github.com/SeelabFhdo/ddmm)
+[9] Rademacher, F., Sorgalla, J., Sachweh, S.: Challenges of domain-driven microservice design:
+A model-driven perspective. IEEE Software 35(3), 36–43 (2018)
+
